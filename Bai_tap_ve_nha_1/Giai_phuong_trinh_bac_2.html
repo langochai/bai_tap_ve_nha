@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<input type="text" id="a">x <sup>2</sup>+
+<input type="text" id="b">x +
+<input type="text" id="c"> =0
+<button onclick="calculate()">Kiểm tra</button>
+<br>
+<p id="result"></p>
+</body>
+<script>
+    function calculate() {
+        let x1
+        let x2
+        let a = parseInt(document.getElementById("a").value)
+        let b = parseInt(document.getElementById("b").value)
+        let c = parseInt(document.getElementById("c").value)
+        let delta = (b*b)-(4*a*c)
+        if(delta>0){
+            x1 = (-Math.abs(b)+Math.sqrt(delta))/(2*a)
+            x2 = (-Math.abs(b)-Math.sqrt(delta))/(2*a)
+            document.getElementById("result").innerHTML="Nghiệm 1 là: "+x1+" &#160&#160&#160&#160&#160 Nghiệm 2 là: "+x2
+        }else if(delta==0){
+            x1 = -Math.abs(b/(2*a))
+            x2 = -Math.abs(b/(2*a))
+            document.getElementById("result").innerHTML="Chỉ có 1 nghiệm là: "+x1
+        }else{
+            document.getElementById("result").innerHTML="Không có nghiệm"
+        }
+    }
+</script>
+</html>
