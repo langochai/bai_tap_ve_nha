@@ -20,7 +20,10 @@
         let b = parseInt(document.getElementById("b").value)
         let c = parseInt(document.getElementById("c").value)
         let delta = (b*b)-(4*a*c)
-        if(delta>0){
+        if(a==0){
+            x1 = -Math.abs(c/b)
+            document.getElementById("result").innerHTML="Nghiệm là: "+x1
+        }else if(delta>0){
             x1 = (-Math.abs(b)+Math.sqrt(delta))/(2*a)
             x2 = (-Math.abs(b)-Math.sqrt(delta))/(2*a)
             document.getElementById("result").innerHTML="Nghiệm 1 là: "+x1+" &#160&#160&#160&#160&#160 Nghiệm 2 là: "+x2
