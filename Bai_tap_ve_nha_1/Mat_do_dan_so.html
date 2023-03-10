@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mat do dan so</title>
+</head>
+<body>
+<input type="text" id="population"> là số dân <br>
+<input type="text" id="area"> là diện tích khu vực sống (km <sup>2</sup>)     <br>
+<button onclick="calculate()">Kiểm tra</button>
+<br>
+<p id="result"></p>
+</body>
+<script>
+    function calculate(){
+        let popu = +document.getElementById("population").value
+        let area = +document.getElementById("area").value
+        if (popu/area > 1000){
+            document.getElementById("result").innerHTML="Khu vực này quá đông đúc"
+        } else {
+            document.getElementById("result").innerHTML="Khu vực này không quá đông đúc"
+        }
+    }
+</script>
+</html>
