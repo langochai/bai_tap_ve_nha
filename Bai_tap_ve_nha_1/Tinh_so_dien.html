@@ -5,7 +5,7 @@
     <title>Tính số điện</title>
 </head>
 <body>
-<input type="text" id="sodien"> là số điện đã sử dụng (kWh)<br>
+<input type="text" id="sodien"> là số điện đã sử dụng (kWh)<br> <!-- mặc định số điện nhập vào là một số nguyên dương --!>
 <button onclick="calculate()">Kiểm tra</button>
 <br>
 <p id="result"></p>
@@ -13,7 +13,7 @@
 <script>
     function calculate() {
         let sodien = parseInt(document.getElementById("sodien").value)
-        const gtgt = 1.1
+        const gtgt = 1.1 //gtgt là giá trị gia tăng
         let result
         if (sodien > 0 && sodien <= 50) {
             result = (sodien * 1678) * gtgt // 0-50kWh: mỗi 1kWh giá  1678vnd - tổng khoảng 50kWh giá 83900vnd
@@ -28,7 +28,7 @@
         } else if (sodien > 400) {
             result = (((sodien - 400) * 2927) + 83900 + 86700 + 201400 + 254600 + 283400) * gtgt
         }
-        document.getElementById("result").innerHTML="Số tiền cần phải trả là: "+ result.toLocaleString()
+        document.getElementById("result").innerHTML = "Số tiền cần phải trả là: " + result.toLocaleString()
     }
 </script>
 </html>
