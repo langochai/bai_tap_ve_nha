@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính số điện</title>
+</head>
+<body>
+<input type="text" id="sodien"> là số điện đã sử dụng (kWh)<br>
+<button onclick="calculate()">Kiểm tra</button>
+<br>
+<p id="result"></p>
+</body>
+<script>
+    function calculate() {
+        let sodien = parseInt(document.getElementById("sodien").value)
+        const gtgt = 1.1
+        let result
+        if (sodien > 0 && sodien <= 50) {
+            result = (sodien * 1678) * gtgt // 0-50kWh: mỗi 1kWh giá  1678vnd - tổng khoảng 50kWh giá 83900vnd
+        } else if (sodien > 50 && sodien <= 100) {
+            result = (((sodien - 50) * 1734) + 83900) * gtgt  // 50-100kWh: mỗi 1kWh giá  1734vnd - tổng khoảng 50kWh giá 86700vnd
+        } else if (sodien > 100 && sodien <= 200) {
+            result = (((sodien - 100) * 2014) + 83900 + 86700) * gtgt //tương tự 2 phần giá điện bên trên, không giải thích nữa
+        } else if (sodien > 200 && sodien <= 300) {
+            result = (((sodien - 200) * 2536) + 83900 + 86700 + 201400) * gtgt
+        } else if (sodien > 300 && sodien <= 400) {
+            result = (((sodien - 300) * 2834) + 83900 + 86700 + 201400 + 254600) * gtgt
+        } else if (sodien > 400) {
+            result = (((sodien - 400) * 2927) + 83900 + 86700 + 201400 + 254600 + 283400) * gtgt
+        }
+        document.getElementById("result").innerHTML="Số tiền cần phải trả là: "+ result.toLocaleString()
+    }
+</script>
+</html>
