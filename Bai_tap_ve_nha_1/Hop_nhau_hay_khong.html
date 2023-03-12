@@ -9,65 +9,26 @@
 <input type="text" id="nu"> là tuổi của nữ <br>
 <button onclick="calculate()">Kiểm tra</button>
 <br>
-<p id="result"></p>
+<p id="result1"></p>
+<br>
+<p id="result2"></p>
 </body>
 <script>
     function calculate() {
         let nam = parseInt(document.getElementById("nam").value)
         let nu = parseInt(document.getElementById("nu").value)
-        let zodiacNam
-        let zodiacNu
-        if (nam % 12 == 4) {
-            zodiacNam = "Ti"
-        } else if (nam % 12 == 5) {
-            zodiacNam = "Suu"
-        } else if (nam % 12 == 6) {
-            zodiacNam = "Dan"
-        } else if (nam % 12 == 7) {
-            zodiacNam = "Mao"
-        } else if (nam % 12 == 8) {
-            zodiacNam = "Thin"
-        } else if (nam % 12 == 9) {
-            zodiacNam = "Ty"
-        } else if (nam % 12 == 10) {
-            zodiacNam = "Ngo"
-        } else if (nam % 12 == 11) {
-            zodiacNam = "Mui"
-        } else if (nam % 12 == 0) {
-            zodiacNam = "Than"
-        } else if (nam % 12 == 1) {
-            zodiacNam = "Dau"
-        } else if (nam % 12 == 2) {
-            zodiacNam = "Tuat"
-        } else if (nam % 12 == 3) {
-            zodiacNam = "Hoi"
+        if((Math.abs(nam%12 - nu%12))%4==0){
+            document.getElementById("result1").innerHTML="hai người thuộc tam hợp"
+        } else {
+            document.getElementById("result1").innerHTML="hai người không thuộc tam hợp"
         }
-        if (nu % 12 == 4) {
-            zodiacNam = "Ti"
-        } else if (nu % 12 == 5) {
-            zodiacNam = "Suu"
-        } else if (nu % 12 == 6) {
-            zodiacNam = "Dan"
-        } else if (nu % 12 == 7) {
-            zodiacNam = "Mao"
-        } else if (nu % 12 == 8) {
-            zodiacNam = "Thin"
-        } else if (nu % 12 == 9) {
-            zodiacNam = "Ty"
-        } else if (nu % 12 == 10) {
-            zodiacNam = "Ngo"
-        } else if (nu % 12 == 11) {
-            zodiacNam = "Mui"
-        } else if (nu % 12 == 0) {
-            zodiacNam = "Than"
-        } else if (nu % 12 == 1) {
-            zodiacNam = "Dau"
-        } else if (nu % 12 == 2) {
-            zodiacNam = "Tuat"
-        } else if (nu % 12 == 3) {
-            zodiacNam = "Hoi"
+        if(Math.abs(nam%12 - nu%12)==0){
+            document.getElementById("result1").innerHTML="cùng 1 con giáp, t cũng không rõ lắm về vấn đề này"
+        }else if((Math.abs(nam%12 - nu%12))%3==0){
+            document.getElementById("result2").innerHTML="hai người thuộc tứ hành xung"
+        } else {
+            document.getElementById("result2").innerHTML="hai người không tứ hành xung"
         }
-        //chua xu li duoc vi vua phat hien ra khong the viet nhieu && || ket hop cung nhau trong if()
     }
 </script>
 </html>
