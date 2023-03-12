@@ -19,19 +19,21 @@
         let a = parseInt(document.getElementById("a").value)
         let b = parseInt(document.getElementById("b").value)
         let c = parseInt(document.getElementById("c").value)
-        let delta = (b*b)-(4*a*c)
-        if(a==0){
-            x1 = -Math.abs(c/b)
-            document.getElementById("result").innerHTML="Nghiệm là: "+x1
-        }else if(delta>0){
-            x1 = (-Math.abs(b)+Math.sqrt(delta))/(2*a)
-            x2 = (-Math.abs(b)-Math.sqrt(delta))/(2*a)
-            document.getElementById("result").innerHTML="Nghiệm 1 là: "+x1+" &#160&#160&#160&#160&#160 Nghiệm 2 là: "+x2
-        }else if(delta==0){
-            x1 = -Math.abs(b/(2*a))
-            document.getElementById("result").innerHTML="Chỉ có 1 nghiệm là: "+x1
-        }else{
-            document.getElementById("result").innerHTML="Không có nghiệm"
+        let delta = (b * b) - (4 * a * c)
+        if (a == 0 && b == 0) {
+            document.getElementById("result").innerHTML = "bruh điền a và b khác 0 plz"
+        } else if (a == 0 && b != 0) {
+            x1 = -Math.abs(c / b)
+            document.getElementById("result").innerHTML = "Nghiệm là: " + x1
+        } else if (delta > 0) {
+            x1 = (-Math.abs(b) + Math.sqrt(delta)) / (2 * a)
+            x2 = (-Math.abs(b) - Math.sqrt(delta)) / (2 * a)
+            document.getElementById("result").innerHTML = "Nghiệm 1 là: " + x1 + " &#160&#160&#160&#160&#160 Nghiệm 2 là: " + x2
+        } else if (delta == 0) {
+            x1 = -Math.abs(b / (2 * a))
+            document.getElementById("result").innerHTML = "Chỉ có 1 nghiệm là: " + x1
+        } else {
+            document.getElementById("result").innerHTML = "Không có nghiệm"
         }
     }
 </script>
