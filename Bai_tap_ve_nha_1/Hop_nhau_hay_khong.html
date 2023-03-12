@@ -5,8 +5,8 @@
     <title>Hợp nhau hay không?</title>
 </head>
 <body>
-<input type="text" id="nam"> là tuổi của nam <br>
-<input type="text" id="nu"> là tuổi của nữ <br>
+<input type="text" id="nam"> là năm sinh của nam <br> <!-- chỉ nhập năm sinh, không nhập ngày tháng--!>
+<input type="text" id="nu"> là năm sinh của nữ <br>
 <button onclick="calculate()">Kiểm tra</button>
 <br>
 <p id="result1"></p>
@@ -23,11 +23,11 @@
             document.getElementById("result1").innerHTML="hai người không thuộc tam hợp"
         }
         if(Math.abs(nam%12 - nu%12)==0){
-            document.getElementById("result1").innerHTML="cùng 1 con giáp, t cũng không rõ lắm về vấn đề này"
+            document.getElementById("result1").innerHTML="cùng 1 con giáp, không rõ lắm về tam hợp/tứ hành xung"
         }else if((Math.abs(nam%12 - nu%12))%3==0){
             document.getElementById("result2").innerHTML="hai người thuộc tứ hành xung"
         } else {
-            document.getElementById("result2").innerHTML="hai người không tứ hành xung"
+            document.getElementById("result2").innerHTML="hai người không thuộc tứ hành xung"
         }
     }
 </script>
