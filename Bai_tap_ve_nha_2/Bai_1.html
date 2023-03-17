@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm loại bỏ giá trị sai trong mảng</title>
+</head>
+<body>
+<script>
+  let arr = [ false, null, 0, "", undefined, NaN]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == false){
+      arr.splice(i,1)
+    }
+  }
+  console.log(arr)
+</script>
+</body>
+</html>
