@@ -6,19 +6,22 @@
 </head>
 <body>
 <script>
-  let str = prompt("nhập chuỗi số (các phần tử cách nhau bằng dấu phẩy, vd: 1,2,3)")
-  let arr = str.split(",").map(Number)
-  let temp = 0
-  for (let i = 0; i < arr.length; i++) {
-      for (let j = i + 1; j < arr.length; j++) {
-          if (arr[i]<arr[j]){
-              temp = arr[j]
-              arr[j] = arr[i]
-              arr[i] = temp
-          }
-      }
-  }
-  document.write(`phần tử lớn thứ 2 trong mảng là ${arr[1]}`)
+    function bai2() {
+        let str = prompt("nhập chuỗi số (các phần tử cách nhau bằng dấu phẩy, vd: 1,2,3)")
+        let arr = str.split(",").map(Number)
+        let temp = 0
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    temp = arr[j]
+                    arr[j] = arr[i]
+                    arr[i] = temp
+                }
+            }
+        }
+        document.write(`phần tử lớn thứ 2 trong mảng là ${arr[1]}`)
+    }
+    bai2()
 </script>
 </body>
 </html>
