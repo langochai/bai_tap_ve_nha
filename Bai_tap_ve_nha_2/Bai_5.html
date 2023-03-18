@@ -6,11 +6,26 @@
 </head>
 <body>
 <script>
-  //giả sử a.length > b.length
-  let c =[]
-  for (let i = 0; i < a.length; i++) {
-    c.push(a[i]+b[i])
-  }
+    function sumArr(arr1, arr2) {
+        if (arr1.length > arr2.length) {
+            for (let i = arr2.length; i < arr1.length; i++) {
+                arr2.push(0);
+            }
+        } else if (arr2.length > arr1.length) {
+            for (let i = arr1.length; i < arr2.length; i++) {
+                arr1.push(0);
+            }
+        }
+        let newArr = [];
+        for (let i = 0; i < arr1.length; i++) {
+            let k = arr1[i] + arr2[i];
+            newArr.push(k);
+        }
+        return newArr;
+    }
+    let arr1 = [1,2,3]
+    let arr2 = [4,5,6,7,8]
+    sumArr(arr1, arr2)
 </script>
 </body>
 </html>
