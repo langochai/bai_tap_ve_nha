@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim phan tu khong bi trung lap trong mang</title>
+</head>
+<body>
+<script>
+    function findUnique(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            let flag = true
+            for (let j = 0; j < arr.length; j++) {
+                let count = 0
+                if (arr[i] == arr[j]){
+                    count ++
+                }
+                if (count > 1){
+                    flag = false
+                }
+            }
+            if (flag){
+                document.write(`${arr[i]} la phan tu khong bi trung lap trong mang, nam o vi tri ${i} <br>`)
+            }
+        }
+    }
+    let array = [1,1,2,2,3,3,4,4,5]
+    findUnique(array)
+</script>
+</body>
+</html>
