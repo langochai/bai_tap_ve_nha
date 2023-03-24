@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim Max</title>
+</head>
+<body>
+<script>
+  function hamso(x){
+    return x * x - x -1
+  }
+  document.write(`ham so cho san la: x<sup>2</sup> - x - 1 <br>`)
+  let arr = []
+  for (let i = 0; i <= 10; i++) {
+    arr.push(i)
+  }
+  document.write(`mang cho san la ${arr}<br>`)
+  let max = hamso(arr[0])
+  for (let i = 1; i <= 10; i++) {
+    if(hamso(arr[i])>max){
+      max = hamso(arr[i])
+    }
+  }
+  document.write(`gia tri lon nhat cua ham so trong khoang da cho la ${max}<br>`)
+</script>
+</body>
+</html>
