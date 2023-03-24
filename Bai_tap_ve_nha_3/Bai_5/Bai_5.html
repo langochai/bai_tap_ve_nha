@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim mang co tong lon nhat</title>
+</head>
+<body>
+<script>
+    function bai_5() {
+        let input = []
+        let arrLength = []
+        for (let i = 1; i <= 4; i++) {
+            let str = prompt(`nhập mảng (các phần tử cách nhau bởi dấu phẩy):`)
+            document.write(`mảng thứ ${i} là ${str} <br>`)
+            let arr = str.split(",")
+            input.push(arr)
+            arrLength.push(arr.length)
+        }
+        // console.log(input)
+        let arrOfSum = []
+        for (let i = 0; i < 4; i++) {
+            let sum = 0
+            for (let j = 0; j < arrLength[i]; j++) {
+                sum += +input[i][j]
+            }
+            arrOfSum.push(sum)
+        }
+        // console.log(arrOfSum)
+        let max = arrOfSum[0]
+        let index = 0
+        for (let i = 0; i < arrOfSum.length; i++) {
+            if (arrOfSum[i] > max) {
+                max = arrOfSum[i]
+                index = i
+            }
+        }
+        document.write(`mảng có tổng lớn nhất là mảng thứ ${index+1}`)
+    }
+    bai_5()
+</script>
+</body>
+</html>
