@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim phan tu dau tien duy nhat</title>
+</head>
+<body>
+<script>
+    function bai4(arr) {
+        let unique = []
+        for (let i = 0; i < arr.length; i++) {
+            let flag = true
+            let count = 0
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[i] === arr[j]) {
+                    count++
+                }
+                if (count > 1) {
+                    flag = false
+                    break
+                }
+            }
+            if (flag) {
+                unique.push(arr[i])
+            }
+        }
+        document.write(`ket qua la: ${unique[0]}`)
+    }
+
+    let str = prompt(`Nhap vao mang de kiem tra:`)
+    let arr = str.split(",")
+    bai4(arr)
+</script>
+</body>
+</html>
