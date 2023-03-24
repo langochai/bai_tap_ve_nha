@@ -5,6 +5,27 @@
     <title>Bo ba so</title>
 </head>
 <body>
-
+<script>
+    let str = prompt(`nhập mảng:`)
+    document.write(`mảng là: ${str} <br>`)
+    let arr = str.split(",")
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +arr[i]
+    }
+    // console.log(arr)
+    let sum = parseInt(prompt(`nhập tổng`))
+    document.write(`tổng là: ${sum} <br>`)
+    for (let i = 0; i < arr.length; i++) {
+        let smallerSum = sum - arr[i]
+        // console.log(smallerSum)
+        for (let j = i+1; j < arr.length; j++) {
+            for (let k = j+1; k < arr.length; k++) {
+                if (arr[j]+arr[k] === smallerSum){
+                    document.write(`phần tử 1 là ${arr[i]}  -  phần tử 2 là ${arr[j]}  -  phần tử 3 là ${arr[k]}<br>`)
+                }
+            }
+        }
+    }
+</script>
 </body>
 </html>
