@@ -10,9 +10,14 @@
   document.write(`mảng đã nhập là: ${str} <br>`)
   let k = prompt(`nhập số k (lớn nhất là 1):`)
   let arr = str.split(",")
+  for (let i = 0; i < arr.length; i++) {
+      arr[i] = +arr[i]
+  }
   let sorted = arr.sort(function(a, b){return b-a});
   // console.log(sorted)
-
+  sorted = sorted.filter((item, index) => sorted.indexOf(item) === index);
+  // console.log(sorted)
+  document.write(`phần tử lớn thứ ${k} là ${sorted[k-1]}`)
 </script>
 </body>
 </html>
