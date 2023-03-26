@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>tim 2 so</title>
+    <title>tìm 2 số có khoảng cách ngắn nhất và có tổng cho trước</title>
 </head>
 <body>
-
+<script>
+    let str = prompt(`nhập mảng:`)
+    document.write(`mảng là: ${str} <br>`)
+    let arr = str.split(",")
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +arr[i]
+    }
+    let arrOfi = []
+    let arrOfj = []
+    let distance = []
+    let sum = +prompt(`nhập tổng:`)
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] == sum) {
+                arrOfi.push(arr[i])
+                arrOfj.push(arr[j])
+                distance.push(j-i)
+            }
+        }
+    }
+    let index = -1
+    let min = distance[0]
+    for (let i = 0; i <distance.length; i++) {
+        if (distance[i] < min){
+            min = distance[i]
+            index = i
+        }
+    }
+    document.write(`2 phần tử cần tìm là ${arrOfi[index]} và ${arrOfj[index]}`)
+</script>
 </body>
 </html>
